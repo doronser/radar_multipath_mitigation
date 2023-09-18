@@ -1,0 +1,62 @@
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+% The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
+%\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+% \usepackage{algorithmic}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{biblatex} %Imports biblatex package
+\addbibresource{citations.bib} %Import the bibliography file
+\usepackage{subfiles} % Best loaded last in the preamble
+
+
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+\begin{document}
+
+\title{Introduction to Radar Signal Processing Course Project}
+
+\author{\IEEEauthorblockN{Doron Serebro} 
+\IEEEauthorblockA{\textit{Dept. of Electrical Engineering} \\
+\textit{Ben-Gurion University}\\
+dorosner@post.bgu.ac.il}
+}
+
+\maketitle
+
+\begin{abstract}
+Multipath induced ghost targets are a major pain point for automotive radar. This work extends the multipath mitigation method suggested by Longman et. al. \cite{longman_multipath_2021} beyond vehicles to vulnerable road users such as pedestrians and cyclists. This is achieved by aggregating the radar detections to enable a more dense set of points per track. The method is evaluated on a dataset comprised of multiple real-world automotive scenarios.
+\end{abstract}
+
+\begin{IEEEkeywords}
+Automotive radar, Multipath, Multipath mitigation
+\end{IEEEkeywords}
+
+\section{Introduction}
+\subfile{sections/1_introduction}
+ 
+
+\section{Problem Definition}
+\subfile{sections/2_problem_definition}
+
+\section{Multipath Mitigation Method}
+\subfile{sections/3_method}
+
+\section{Results}
+\subfile{sections/4_results}
+
+\section{Future Work}
+The scope of this work was limited since it is a course project. Future work may improve on this by:
+\begin{itemize}
+    \item Increasing the number of estimated reflection points to the size of the larger cluster by performing a better point assosiation between the 2 candidate clusters (possible solution - center normalize both clusters and use KDTree for assosiation).
+    \item suggest an evaluation metric that will express the agreement between the estimated reflection surface and the static radar detections (possible solution - count number of static points with a distance smaller than a given threshold to the estimated line segment).
+\end{itemize}
+
+\printbibliography %Prints bibliography
+\vspace{12pt}
+
+\end{document}

@@ -1,0 +1,5 @@
+*.csv
+manuscript/*.*
+!manuscript/*.tex
+manuscript/sections/*.*
+!manuscript/sections/*.tex
