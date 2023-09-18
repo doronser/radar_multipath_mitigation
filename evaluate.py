@@ -9,7 +9,7 @@ from pathlib import Path
 from tqdm import trange, tqdm
 from scipy.stats import linregress
 
-sys.path.insert(0, "/home/doronser/workspace")
+sys.path.insert(0, os.path.dirname(os.getcwd()))
 from radar_multipath_mitigation.utils import *
 
 
